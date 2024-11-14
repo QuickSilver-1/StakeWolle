@@ -1,0 +1,158 @@
+openapi: 3.0.0
+info:
+  title: Referral System API
+  description: API для реферальной системы
+  version: 1.0.0
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        password:
+          type: string
+        referralCode:
+          type: string
+        referrerId:
+          type: integer
+
+    ReferralCode:
+      type: object
+      properties:
+        code:
+          type: string
+        expiresAt:
+          type: string
+          format: date-time
+
+security:
+  - bearerAuth: []
+
+paths:
+  /register:
+    post:
+      summary: Регистрация пользователя
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Пользователь зарегистрирован
+        '400':
+          description: Ошибка запроса
+
+  /login:
+    post:
+      summary: Аутентификация пользователя
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Успешная аутентификация
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+        '401':
+          description: Неверные учетные данные
+
+  /referral:
+    post:
+      summary: Создание реферального кода
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                expiresAt:
+                  type: string
+                  format: date-time
+      responses:
+        '201':
+          description: Реферальный код создан
+        '400':
+          description: Ошибка запроса
+
+    delete:
+      summary: Удаление реферального кода
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Реферальный код удален
+        '400':
+          description: Ошибка запроса
+
+  /referral/{email}:
+    get:
+      summary: Получение реферального кода по email
+      parameters:
+        - in: path
+          name: email
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешное получение реферального кода
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferralCode'
+        '404':
+          description: Реферальный код не найден
+
+  /referrals/{referrerId}:
+    get:
+      summary: Получение информации о рефералах по id реферера
+      parameters:
+        - in: path
+          name: referrerId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Список рефералов
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '404':
+          description: Рефералы не найдены

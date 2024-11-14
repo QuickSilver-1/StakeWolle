@@ -1,25 +1,27 @@
 package main
 
 import (
-	"flag"
-	"log"
-	"os"
+	"fmt"
+	c "referal/internal/config"
+	dh "referal/internal/dbhandlers"
+	sb "referal/internal/serverbuilder"
+	"referal/pkg/db"
+	"referal/pkg/log"
+	"strconv"
+	"time"
 )
 
 func main() {
-	flag.Parse()
+	close := make(chan interface{})
+	go db.ClearDB(time.Hour, db.DB.Connection, "code", close)
+	defer func() {
+		close<-1
+	}()
 
-	file, err := os.OpenFile("log/worker.log", os.O_APPEND, 0666)
+	dh.CollectHandlers(&db.DB)
 
-	log.SetFlags(log.Ldate | log.Ltime)
-	if err != nil {
-		file, _ := os.OpenFile("log/file.log", os.O_APPEND, 0666)
-		log.SetOutput(file)
-		log.Fatal("Failed to open log file: ", err)
-	}
-
-	log.SetOutput(file)
-
-
-
+	appServer := sb.MakeServer(":" + strconv.Itoa(*c.AppConfig.HttpPort), 10, 10)
+	log.Logger.Info("start server")
+	err := appServer.ListenAndServe()
+	fmt.Print(err)
 }

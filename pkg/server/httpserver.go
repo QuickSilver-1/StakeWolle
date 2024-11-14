@@ -1,13 +1,13 @@
-package pkg
+package server
 
 import (
 	"net/http"
 	"time"
+
+	"github.com/gorilla/mux"
 )
 
-func NewServer(port string, r, w int) *http.Server {
-
-	mux := http.NewServeMux()
+func NewServer(port string, mux *mux.Router, r, w int) *http.Server {
 
 	server := &http.Server{
 		Addr:         port,

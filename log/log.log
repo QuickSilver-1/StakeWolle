@@ -1,0 +1,66 @@
+2024-11-14T19:13:35.821+0300	INFO	referal/main.go:28	start server
+2024-11-14T19:16:30.326+0300	INFO	referal/main.go:28	start server
+2024-11-14T19:18:37.637+0300	INFO	referal/main.go:28	start server
+2024-11-14T19:19:03.230+0300	INFO	referal/main.go:28	start server
+2024-11-14T19:21:18.264+0300	INFO	referal/main.go:28	start server
+2024-11-14T19:22:11.806+0300	INFO	referal/main.go:28	start server
+2024-11-14T19:24:37.966+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:30:31.953+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:31:01.505+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:31:07.715+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:31:18.894+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:31:38.119+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:31:47.864+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:32:35.678+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:32:52.374+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:33:19.241+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:37:58.960+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:46:49.088+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:47:09.350+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:48:07.141+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:48:28.141+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:48:42.185+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:49:12.413+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:49:34.498+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:50:06.619+0300	INFO	referal/main.go:30	start server
+2024-11-14T19:51:11.501+0300	INFO	referal/main.go:30	start server
+2024-11-14T21:48:18.563+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:01:44.621+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:02:53.322+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:21:07.974+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:21:45.062+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:22:19.146+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:22:42.576+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:23:11.541+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:23:40.268+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:24:59.355+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:27:27.935+0300	INFO	referal/main.go:30	start server
+2024-11-14T22:41:32.524+0300	INFO	referal/main.go:24	start server
+2024-11-14T22:44:10.859+0300	INFO	referal/main.go:24	start server
+2024-11-14T22:44:13.621+0300	INFO	server/middleware.go:18	Request GET /signin
+2024-11-14T22:44:13.622+0300	INFO	server/middleware.go:21	Completed GET /signin in 519.1µs
+2024-11-14T22:44:20.577+0300	INFO	server/middleware.go:18	Request GET /
+2024-11-14T22:44:20.577+0300	INFO	server/middleware.go:21	Completed GET / in 0s
+2024-11-14T22:44:32.435+0300	INFO	server/middleware.go:18	Request GET /
+2024-11-14T22:44:32.435+0300	INFO	server/middleware.go:21	Completed GET / in 0s
+2024-11-14T22:44:44.793+0300	INFO	server/middleware.go:18	Request GET /
+2024-11-14T22:44:44.793+0300	INFO	server/middleware.go:21	Completed GET / in 0s
+2024-11-14T22:44:48.070+0300	INFO	server/middleware.go:18	Request GET /signin
+2024-11-14T22:44:48.113+0300	INFO	server/middleware.go:21	Completed GET /signin in 42.9594ms
+2024-11-14T22:45:00.727+0300	INFO	referal/main.go:24	start server
+2024-11-14T22:45:00.768+0300	INFO	server/middleware.go:18	Request GET /signin
+2024-11-14T22:45:00.807+0300	INFO	server/middleware.go:21	Completed GET /signin in 38.1989ms
+2024-11-14T22:45:06.486+0300	INFO	referal/main.go:24	start server
+2024-11-14T22:45:10.169+0300	INFO	server/middleware.go:18	Request GET /
+2024-11-14T22:45:10.170+0300	INFO	server/middleware.go:21	Completed GET / in 562.4µs
+2024-11-14T22:45:12.508+0300	INFO	server/middleware.go:18	Request GET /signin
+2024-11-14T22:45:12.546+0300	INFO	server/middleware.go:21	Completed GET /signin in 37.9583ms
+2024-11-14T22:50:06.665+0300	INFO	referal/main.go:24	start server
+2024-11-14T22:50:19.724+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-14T22:50:19.724+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 541.4µs
+2024-11-14T22:50:19.728+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-14T22:50:19.729+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.0908ms
+2024-11-14T22:51:15.679+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-14T22:51:15.680+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 526.1µs
+2024-11-14T22:51:15.683+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-14T22:51:15.684+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.3848ms
