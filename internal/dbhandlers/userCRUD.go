@@ -2,6 +2,7 @@ package dbhandlers
 
 import (
 	"database/sql"
+	"fmt"
 	"referal/pkg/db"
 	"time"
 )
@@ -10,6 +11,8 @@ func CollectHandlers(conn *db.ConnectDatabase) {
 	conn.Command = map[string]func(*sql.DB, chan string, ...any) {
 		"create": 	createUser,
 		"check":	checkUser,
+		"generate":	setCode,
+		"exist":	getCode,
 	}
 }
 
@@ -39,19 +42,14 @@ func createUser(database *sql.DB, out chan string, args ...any) {
 		return
 	}
 
-	out<- ""
+	out<- "success"
 }
 
 func checkUser(database *sql.DB, out chan string, args ...any) {
 	var pass string
-	err := database.QueryRow(` SELECT password FROM user WHERE email=$1 `, args[0]).Scan(&pass)
-	
-	if err != nil {
-		out<- err.Error()
-		return
-	}
+	database.QueryRow(` SELECT "password" FROM users WHERE "email"=$1; `, args[0]).Scan(&pass)
 
-	if len(pass) == 0 {
+	if pass == "\n" {
 		out<- ""
 		return
 	}
@@ -59,3 +57,24 @@ func checkUser(database *sql.DB, out chan string, args ...any) {
 	out<- pass
 }
 
+func setCode(database *sql.DB, out chan string, args ...any) {
+	_, err := database.Exec(` UPDATE code SET "code_string"=$1, "expires"=$2 WHERE "code_id"=(SELECT "ref_code" FROM users WHERE "email"=$3); `, args[0], args[1], args[2])
+
+	if err != nil {
+		out<- err.Error()
+	}
+
+	out<- "success"
+}
+
+func getCode(database *sql.DB, out chan string, args ...any) {
+	var code string
+	database.QueryRow(` SELECT "code_string" FROM code WHERE "code_id"=(SELECT "ref_code" FROM users WHERE "email"=$1); `, args[0]).Scan(&code)
+	fmt.Println(code)
+	if code != "" {
+		out<- "exist"
+		return
+	}
+
+	out<- "not exist"
+}

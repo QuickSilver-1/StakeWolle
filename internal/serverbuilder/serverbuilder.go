@@ -21,6 +21,8 @@ func MakeServer(port string, readWait, writeWait int) *http.Server {
 	afterAuth := mux.PathPrefix("/").Subrouter()
 	afterAuth.Use(server.CheckJWT)
 	afterAuth.HandleFunc("/", handlers.MainPage)
+	afterAuth.HandleFunc("/signout", handlers.SignOut).Methods("GET")
+	afterAuth.HandleFunc("/generate", handlers.GenRef)
 
 	return server.NewServer(port, mux, readWait, writeWait)
 }

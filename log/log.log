@@ -64,3 +64,712 @@
 2024-11-14T22:51:15.680+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 526.1µs
 2024-11-14T22:51:15.683+0300	INFO	server/middleware.go:21	Request GET /signin
 2024-11-14T22:51:15.684+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.3848ms
+2024-11-15T10:58:36.704+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:00:33.490+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:00:33.490+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 0s
+2024-11-15T11:00:33.493+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:00:33.494+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 569.8µs
+2024-11-15T11:01:22.528+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:01:22.529+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 523.2µs
+2024-11-15T11:01:22.531+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:01:22.533+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.3233ms
+2024-11-15T11:03:07.470+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:03:10.514+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:03:10.514+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 531.1µs
+2024-11-15T11:03:10.520+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:03:10.521+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 875.8µs
+2024-11-15T11:07:27.623+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:07:29.782+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:07:29.782+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 534.3µs
+2024-11-15T11:07:29.786+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:07:29.788+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.5219ms
+2024-11-15T11:08:00.826+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:08:05.107+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:08:05.108+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 532.1µs
+2024-11-15T11:08:05.112+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:08:05.113+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.2862ms
+2024-11-15T11:08:30.489+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:08:33.050+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:08:33.050+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 0s
+2024-11-15T11:08:33.056+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:08:33.057+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 748µs
+2024-11-15T11:08:36.171+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:08:36.211+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 40.1688ms
+2024-11-15T11:08:38.031+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:08:38.031+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 952.4µs
+2024-11-15T11:08:38.035+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:08:38.036+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 966.3µs
+2024-11-15T11:09:49.843+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:09:50.723+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:09:50.763+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 40.445ms
+2024-11-15T11:09:52.480+0300	INFO	server/middleware.go:21	Request POST /
+2024-11-15T11:09:52.481+0300	INFO	server/middleware.go:26	Completed POST / with 200 in 169.1µs
+2024-11-15T11:09:52.484+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:09:52.485+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 480.6µs
+2024-11-15T11:10:20.503+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:10:23.829+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:10:23.867+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 38.5705ms
+2024-11-15T11:10:37.504+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:10:37.504+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 524.4µs
+2024-11-15T11:10:38.808+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:10:39.051+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 242.7014ms
+2024-11-15T11:14:22.318+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:14:25.579+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:14:25.815+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 236.3347ms
+2024-11-15T11:15:01.488+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:15:03.629+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:15:03.864+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 235.3315ms
+2024-11-15T11:15:07.767+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:15:08.005+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 237.2374ms
+2024-11-15T11:15:32.946+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:15:35.962+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:15:36.234+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 271.4806ms
+2024-11-15T11:15:46.439+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:15:49.305+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:15:49.585+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 280.0202ms
+2024-11-15T11:16:01.595+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:17:06.680+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:17:06.970+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 290.3624ms
+2024-11-15T11:17:25.936+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:17:28.435+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:17:28.679+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 243.7681ms
+2024-11-15T11:20:04.562+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:20:06.366+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:20:06.606+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 240.0518ms
+2024-11-15T11:20:18.596+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:20:20.411+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:20:20.646+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 235.1451ms
+2024-11-15T11:21:24.899+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:21:26.841+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:21:27.112+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 271.2583ms
+2024-11-15T11:25:27.793+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:25:29.940+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:25:30.193+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 252.7755ms
+2024-11-15T11:25:47.042+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:25:48.574+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:25:48.815+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 241.2557ms
+2024-11-15T11:26:49.802+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:26:51.249+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:26:51.486+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 237.013ms
+2024-11-15T11:28:56.063+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:28:57.676+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:28:59.089+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 1.4135384s
+2024-11-15T11:29:10.561+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:29:12.013+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:29:12.250+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 237.0227ms
+2024-11-15T11:29:47.899+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:29:49.663+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:29:49.900+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 237.0252ms
+2024-11-15T11:30:09.528+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:30:11.047+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:30:11.284+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 236.8552ms
+2024-11-15T11:30:34.504+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:30:35.707+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:30:35.944+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 236.9352ms
+2024-11-15T11:31:37.759+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:31:39.472+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:32:27.443+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:32:30.207+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:34:59.458+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:35:29.218+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:41:29.909+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:41:32.244+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:41:40.808+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:41:45.194+0300	INFO	server/middleware.go:21	Request GET /signup
+2024-11-15T11:41:45.195+0300	INFO	server/middleware.go:26	Completed GET /signup with 200 in 1.0596ms
+2024-11-15T11:41:53.211+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:41:53.253+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 42.2345ms
+2024-11-15T11:41:55.528+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:41:56.804+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:42:02.588+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:42:30.145+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:42:30.219+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:42:31.534+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:42:36.086+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:42:51.363+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:42:54.000+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:44:36.467+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:44:39.833+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:46:26.261+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:46:32.654+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:46:32.936+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 282.0318ms
+2024-11-15T11:46:52.695+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:46:54.404+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:46:54.690+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 286.8187ms
+2024-11-15T11:47:29.360+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:47:30.540+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:47:30.825+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:47:30.920+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:48:22.877+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:48:31.605+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:48:31.929+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 323.6614ms
+2024-11-15T11:50:02.904+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:50:02.904+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 513.1µs
+2024-11-15T11:50:02.910+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:50:02.953+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 43.6163ms
+2024-11-15T11:50:06.774+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:50:06.775+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 990.7µs
+2024-11-15T11:50:11.728+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:50:11.729+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 967.3µs
+2024-11-15T11:50:48.454+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:50:53.056+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:51:20.307+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:51:22.718+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:53:27.381+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:53:29.716+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:53:29.998+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 281.6561ms
+2024-11-15T11:53:36.017+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:36.020+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:36.022+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:36.986+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:36.988+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:36.989+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:38.023+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:38.026+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:38.028+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:43.053+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:43.055+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:43.057+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:53:53.064+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:53:55.396+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:53:55.439+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 42.9808ms
+2024-11-15T11:53:57.074+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:53:57.382+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 307.9921ms
+2024-11-15T11:55:52.616+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:55:54.950+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:55:54.950+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 522.6µs
+2024-11-15T11:55:54.953+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:55:54.998+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 45.2282ms
+2024-11-15T11:56:30.290+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:56:34.298+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:56:34.298+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 529.7µs
+2024-11-15T11:56:37.447+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:56:37.448+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 602.5µs
+2024-11-15T11:56:40.293+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T11:56:40.334+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 41.5713ms
+2024-11-15T11:57:50.805+0300	INFO	referal/main.go:24	start server
+2024-11-15T11:57:54.118+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T11:57:54.443+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 325.4054ms
+2024-11-15T11:57:57.481+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T11:57:57.481+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 424.5µs
+2024-11-15T12:04:02.286+0300	INFO	referal/main.go:24	start server
+2024-11-15T12:04:06.385+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T12:04:06.426+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 41.587ms
+2024-11-15T12:04:07.890+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T12:04:08.180+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 289.5398ms
+2024-11-15T12:04:10.418+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:04:10.418+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 0s
+2024-11-15T12:04:15.699+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:04:15.699+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 0s
+2024-11-15T12:04:19.937+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:04:19.937+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 458.3µs
+2024-11-15T12:04:32.254+0300	INFO	referal/main.go:24	start server
+2024-11-15T12:04:40.074+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T12:04:40.114+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 40.0096ms
+2024-11-15T12:04:42.274+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T12:04:42.558+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 283.9886ms
+2024-11-15T12:04:45.310+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:04:45.310+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 0s
+2024-11-15T12:04:45.315+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T12:04:45.316+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 986.4µs
+2024-11-15T12:05:08.795+0300	INFO	referal/main.go:24	start server
+2024-11-15T12:05:15.668+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T12:05:15.948+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 280.8844ms
+2024-11-15T12:05:18.799+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:05:18.800+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 510.1µs
+2024-11-15T12:05:18.805+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T12:05:18.845+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 39.5854ms
+2024-11-15T12:05:26.327+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:05:26.327+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 343.9µs
+2024-11-15T12:05:31.097+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:05:31.097+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 393.7µs
+2024-11-15T12:06:23.129+0300	INFO	referal/main.go:24	start server
+2024-11-15T12:06:26.678+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T12:06:26.978+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 299.8849ms
+2024-11-15T12:06:31.773+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:06:31.773+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 525.8µs
+2024-11-15T12:06:35.703+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:06:35.704+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 691.6µs
+2024-11-15T12:07:22.816+0300	INFO	referal/main.go:24	start server
+2024-11-15T12:07:25.900+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T12:07:25.901+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 526.3µs
+2024-11-15T12:23:37.462+0300	INFO	referal/main.go:24	start server
+2024-11-15T13:59:21.185+0300	INFO	referal/main.go:24	start server
+2024-11-15T13:59:22.010+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T13:59:22.012+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.4239ms
+2024-11-15T13:59:22.019+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T13:59:22.166+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 146.7019ms
+2024-11-15T13:59:51.528+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T13:59:51.833+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 305.0702ms
+2024-11-15T13:59:59.751+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T13:59:59.756+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.3422ms
+2024-11-15T14:14:45.804+0300	INFO	referal/main.go:24	start server
+2024-11-15T14:14:52.529+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:14:52.665+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 135.2381ms
+2024-11-15T14:15:01.050+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:15:01.341+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 290.8475ms
+2024-11-15T14:15:01.350+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:15:01.357+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 6.6961ms
+2024-11-15T14:15:10.612+0300	INFO	referal/main.go:24	start server
+2024-11-15T14:15:13.956+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:15:13.958+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.6312ms
+2024-11-15T14:15:19.780+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:15:19.784+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 3.8601ms
+2024-11-15T14:15:19.793+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:15:19.981+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 187.1167ms
+2024-11-15T14:15:22.421+0300	INFO	server/middleware.go:21	Request GET /signup
+2024-11-15T14:15:22.424+0300	INFO	server/middleware.go:26	Completed GET /signup with 200 in 2.8086ms
+2024-11-15T14:15:28.223+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T14:15:28.675+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 452.2436ms
+2024-11-15T14:15:28.682+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:15:28.687+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.312ms
+2024-11-15T14:15:38.435+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:15:38.437+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 2.6376ms
+2024-11-15T14:15:45.956+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:15:45.956+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 0s
+2024-11-15T14:16:16.865+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:16:16.866+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.0968ms
+2024-11-15T14:16:16.870+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:16:16.871+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 879.2µs
+2024-11-15T14:16:20.129+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:16:20.133+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 4.2438ms
+2024-11-15T14:16:27.621+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:16:27.908+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 287.3101ms
+2024-11-15T14:16:27.917+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:16:27.922+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 4.7053ms
+2024-11-15T14:16:36.166+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:16:36.172+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 6.0213ms
+2024-11-15T14:16:36.181+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:16:36.181+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 0s
+2024-11-15T14:17:03.928+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:17:03.928+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 537.3µs
+2024-11-15T14:17:03.933+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:17:03.933+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 535µs
+2024-11-15T14:17:06.466+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:17:06.755+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 289.5823ms
+2024-11-15T14:17:06.764+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:17:06.768+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 4.5308ms
+2024-11-15T14:18:26.042+0300	INFO	referal/main.go:24	start server
+2024-11-15T14:19:01.025+0300	INFO	referal/main.go:24	start server
+2024-11-15T14:19:02.505+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:02.587+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 82.2829ms
+2024-11-15T14:19:24.028+0300	INFO	referal/main.go:24	start server
+2024-11-15T14:19:25.746+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:25.747+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.0349ms
+2024-11-15T14:19:28.008+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:19:28.011+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 2.8115ms
+2024-11-15T14:19:28.021+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:19:28.180+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 158.7626ms
+2024-11-15T14:19:30.067+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:19:30.367+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 300.4426ms
+2024-11-15T14:19:30.378+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:30.381+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 2.6622ms
+2024-11-15T14:19:31.640+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:19:31.643+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 3.2976ms
+2024-11-15T14:19:31.653+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:19:31.657+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 4.3993ms
+2024-11-15T14:19:38.184+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:38.185+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 570.1µs
+2024-11-15T14:19:38.190+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:19:38.192+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.6478ms
+2024-11-15T14:19:45.385+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:45.387+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 2.0513ms
+2024-11-15T14:19:48.880+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:48.882+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 2.3787ms
+2024-11-15T14:19:51.360+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:19:51.649+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 289.1426ms
+2024-11-15T14:19:51.657+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:19:51.663+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.8959ms
+2024-11-15T14:19:52.893+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:19:52.896+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 2.5731ms
+2024-11-15T14:19:52.905+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:19:52.907+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.7244ms
+2024-11-15T14:20:32.018+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:20:32.018+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 0s
+2024-11-15T14:20:40.332+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:20:40.334+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.9864ms
+2024-11-15T14:20:40.338+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:20:40.339+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.4012ms
+2024-11-15T14:20:42.988+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:20:42.992+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 3.9879ms
+2024-11-15T14:20:45.469+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:20:45.471+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 2.5542ms
+2024-11-15T14:20:48.084+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:20:48.086+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 2.0254ms
+2024-11-15T14:20:50.303+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:20:50.304+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.3259ms
+2024-11-15T14:20:52.624+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:20:52.913+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 289.79ms
+2024-11-15T14:20:52.921+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:20:52.927+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.4378ms
+2024-11-15T14:20:54.067+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:20:54.069+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 2.0168ms
+2024-11-15T14:20:54.079+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:20:54.082+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 2.7737ms
+2024-11-15T14:21:01.341+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:21:01.343+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.8784ms
+2024-11-15T14:21:05.164+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:21:05.451+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 286.6633ms
+2024-11-15T14:21:05.460+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:21:05.465+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 4.5903ms
+2024-11-15T14:21:07.737+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:21:07.743+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 6.221ms
+2024-11-15T14:21:07.753+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:21:07.757+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 4.5025ms
+2024-11-15T14:21:10.826+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:21:10.830+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 4.0271ms
+2024-11-15T14:21:44.156+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:21:44.158+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.8745ms
+2024-11-15T14:21:49.072+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:21:49.074+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 2.4792ms
+2024-11-15T14:21:49.079+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:21:49.082+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 2.664ms
+2024-11-15T14:21:50.755+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:21:50.756+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.2317ms
+2024-11-15T14:21:54.247+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T14:21:54.538+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 291.5ms
+2024-11-15T14:21:54.545+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T14:21:54.551+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.8792ms
+2024-11-15T14:21:55.551+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T14:21:55.552+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.8084ms
+2024-11-15T14:21:55.562+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T14:21:55.566+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 3.5198ms
+2024-11-15T17:33:33.905+0300	INFO	referal/main.go:24	start server
+2024-11-15T17:33:42.604+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T17:33:42.604+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 0s
+2024-11-15T17:33:42.606+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T17:33:42.607+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 836.5µs
+2024-11-15T17:33:44.655+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T17:33:44.939+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 284.3163ms
+2024-11-15T17:33:44.942+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T17:33:44.986+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 44.2413ms
+2024-11-15T17:34:03.383+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T17:34:03.384+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.0419ms
+2024-11-15T17:34:03.386+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T17:34:03.387+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 1.4379ms
+2024-11-15T17:49:06.654+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T17:49:06.654+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 529.5µs
+2024-11-15T17:49:08.440+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T17:49:08.718+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 278.7519ms
+2024-11-15T17:49:08.721+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T17:49:08.722+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 953.9µs
+2024-11-15T17:49:25.786+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T17:49:25.787+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 523.4µs
+2024-11-15T17:49:25.789+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T17:49:25.789+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 683µs
+2024-11-15T17:49:27.340+0300	INFO	server/middleware.go:21	Request GET /signup
+2024-11-15T17:49:27.340+0300	INFO	server/middleware.go:26	Completed GET /signup with 200 in 670.5µs
+2024-11-15T17:49:29.150+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T17:49:29.575+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 425.3735ms
+2024-11-15T17:49:33.574+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T17:49:34.005+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 431.3301ms
+2024-11-15T17:49:34.007+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T17:49:34.008+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 980.8µs
+2024-11-15T18:09:56.162+0300	INFO	referal/main.go:24	start server
+2024-11-15T18:10:00.361+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:10:00.362+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.0536ms
+2024-11-15T18:10:02.682+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:10:02.682+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 370.7µs
+2024-11-15T18:10:18.804+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:10:18.804+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 525.7µs
+2024-11-15T18:10:18.807+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:10:18.807+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 410.2µs
+2024-11-15T18:12:30.519+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:12:30.520+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 541.2µs
+2024-11-15T18:12:40.862+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:12:40.863+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 526.9µs
+2024-11-15T18:26:32.057+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T18:26:32.340+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 282.0588ms
+2024-11-15T18:26:32.342+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:26:32.384+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 42.1495ms
+2024-11-15T18:26:35.349+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:26:35.349+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 914.8µs
+2024-11-15T18:26:35.353+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:26:35.353+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 373µs
+2024-11-15T18:46:39.028+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T18:46:39.311+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 282.7743ms
+2024-11-15T18:46:39.314+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:46:39.314+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 424µs
+2024-11-15T18:46:48.954+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:46:48.955+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 831.4µs
+2024-11-15T18:46:48.958+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:46:48.959+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 657.2µs
+2024-11-15T18:54:49.806+0300	INFO	referal/main.go:24	start server
+2024-11-15T18:54:56.832+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:54:56.832+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 554.5µs
+2024-11-15T18:54:56.836+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:54:56.878+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 41.503ms
+2024-11-15T18:54:59.045+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T18:54:59.324+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 278.9905ms
+2024-11-15T18:54:59.326+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:54:59.327+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 882.1µs
+2024-11-15T18:55:00.616+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:00.617+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 991.1µs
+2024-11-15T18:55:00.620+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:00.621+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 272.1µs
+2024-11-15T18:55:08.622+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:08.622+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 379.8µs
+2024-11-15T18:55:08.626+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:08.626+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 432.7µs
+2024-11-15T18:55:09.587+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T18:55:09.871+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 284.1862ms
+2024-11-15T18:55:09.875+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:55:09.875+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 156.4µs
+2024-11-15T18:55:10.506+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:10.507+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 883.8µs
+2024-11-15T18:55:10.510+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:10.510+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 316.3µs
+2024-11-15T18:55:16.990+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:16.991+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 523.2µs
+2024-11-15T18:55:16.995+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:16.996+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 545.4µs
+2024-11-15T18:55:17.995+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T18:55:18.280+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 284.5683ms
+2024-11-15T18:55:18.282+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:55:18.283+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 857.7µs
+2024-11-15T18:55:19.558+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:19.558+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 0s
+2024-11-15T18:55:19.562+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:19.562+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 237.1µs
+2024-11-15T18:55:29.846+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:29.846+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 0s
+2024-11-15T18:55:29.850+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:29.850+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 285.3µs
+2024-11-15T18:55:34.410+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:55:34.411+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 836.9µs
+2024-11-15T18:55:36.932+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T18:55:37.226+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 294.0772ms
+2024-11-15T18:55:37.229+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T18:55:37.229+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 223µs
+2024-11-15T18:55:38.877+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T18:55:38.878+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 694.5µs
+2024-11-15T18:55:38.881+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T18:55:38.882+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 747.8µs
+2024-11-15T19:03:09.057+0300	INFO	referal/main.go:24	start server
+2024-11-15T19:03:15.206+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:03:15.207+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 533.9µs
+2024-11-15T19:03:15.209+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:03:15.209+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 234.4µs
+2024-11-15T19:03:16.754+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:03:17.031+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 277.6255ms
+2024-11-15T19:03:17.034+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:03:17.034+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 262.8µs
+2024-11-15T19:03:19.471+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:03:19.471+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 297.9µs
+2024-11-15T19:03:19.474+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:03:19.518+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 43.4272ms
+2024-11-15T19:04:26.829+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:04:26.830+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 531.1µs
+2024-11-15T19:04:26.832+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:04:26.833+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 137.1µs
+2024-11-15T19:05:41.117+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:05:41.118+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 513µs
+2024-11-15T19:05:44.257+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:05:44.258+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 802.3µs
+2024-11-15T19:05:51.206+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:05:51.490+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 283.5942ms
+2024-11-15T19:05:51.493+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:05:51.493+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 108.2µs
+2024-11-15T19:05:55.290+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:05:55.291+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.0027ms
+2024-11-15T19:05:57.636+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:05:57.636+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 269µs
+2024-11-15T19:05:57.639+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:05:57.640+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 618.6µs
+2024-11-15T19:09:01.356+0300	INFO	referal/main.go:24	start server
+2024-11-15T19:09:06.122+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:09:06.122+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 535.7µs
+2024-11-15T19:09:06.124+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:09:06.125+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 522.5µs
+2024-11-15T19:11:11.054+0300	INFO	referal/main.go:24	start server
+2024-11-15T19:43:41.905+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:43:42.191+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 286.0643ms
+2024-11-15T19:43:42.195+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:43:42.235+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 40.1343ms
+2024-11-15T19:43:46.942+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:43:46.943+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.4871ms
+2024-11-15T19:43:46.945+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:43:46.946+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 981.8µs
+2024-11-15T19:54:17.963+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:54:17.963+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 530.9µs
+2024-11-15T19:54:17.971+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:54:17.971+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 583.5µs
+2024-11-15T19:57:29.407+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:57:29.407+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 540.6µs
+2024-11-15T19:57:29.411+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:57:29.411+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 905.1µs
+2024-11-15T19:57:36.874+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:57:36.875+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 237µs
+2024-11-15T19:57:50.920+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:57:50.921+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 524.1µs
+2024-11-15T19:57:56.584+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:57:56.862+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 278.3004ms
+2024-11-15T19:57:56.866+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:57:56.866+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 526.8µs
+2024-11-15T19:57:57.868+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:57:57.869+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.0715ms
+2024-11-15T19:57:57.872+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:57:57.872+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 543.9µs
+2024-11-15T19:59:28.161+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T19:59:28.452+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 290.8633ms
+2024-11-15T19:59:28.455+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T19:59:28.455+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 670.4µs
+2024-11-15T19:59:32.608+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T19:59:32.609+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.3476ms
+2024-11-15T19:59:32.613+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T19:59:32.613+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 208.9µs
+2024-11-15T20:35:32.070+0300	INFO	referal/main.go:24	start server
+2024-11-15T20:35:49.700+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T20:35:49.995+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 295.4099ms
+2024-11-15T20:35:50.002+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T20:35:50.008+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.5691ms
+2024-11-15T20:35:52.282+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T20:35:52.285+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 3.0584ms
+2024-11-15T22:01:14.517+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:01:14.694+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T22:01:14.695+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.0778ms
+2024-11-15T22:01:18.068+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:02:21.307+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:02:22.070+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:13:12.037+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:15:26.866+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T22:15:27.049+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 182.7357ms
+2024-11-15T22:15:35.245+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:15:35.535+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 290.7907ms
+2024-11-15T22:16:30.297+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:16:33.750+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:16:34.041+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 291.5537ms
+2024-11-15T22:18:01.040+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:18:43.562+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:18:46.706+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:18:47.000+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 294.0237ms
+2024-11-15T22:21:13.552+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:21:16.256+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:21:16.501+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 244.964ms
+2024-11-15T22:21:35.552+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:21:38.501+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:21:38.746+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 244.8143ms
+2024-11-15T22:23:49.041+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T22:23:49.042+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 1.2441ms
+2024-11-15T22:23:49.051+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T22:23:49.235+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 184.4973ms
+2024-11-15T22:23:52.346+0300	INFO	server/middleware.go:21	Request GET /signup
+2024-11-15T22:23:52.351+0300	INFO	server/middleware.go:26	Completed GET /signup with 200 in 4.9976ms
+2024-11-15T22:23:55.110+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:23:55.548+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 437.5209ms
+2024-11-15T22:24:44.244+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:24:44.674+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 430.6159ms
+2024-11-15T22:24:49.718+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:24:50.162+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 443.6333ms
+2024-11-15T22:25:09.427+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:25:13.745+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:25:14.199+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 453.4435ms
+2024-11-15T22:25:27.169+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:25:46.053+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:27:12.555+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:27:14.277+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:27:14.706+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 429.0716ms
+2024-11-15T22:27:18.388+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:27:18.820+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 432.3195ms
+2024-11-15T22:28:58.847+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:29:02.945+0300	INFO	server/middleware.go:21	Request POST /signup
+2024-11-15T22:29:03.387+0300	INFO	server/middleware.go:26	Completed POST /signup with 200 in 442.6353ms
+2024-11-15T22:29:03.395+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T22:29:03.396+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 1.6131ms
+2024-11-15T22:29:15.296+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:29:15.543+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 246.8601ms
+2024-11-15T22:33:34.932+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:33:38.056+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T22:33:38.241+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 185.1449ms
+2024-11-15T22:33:43.041+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T22:33:43.328+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 286.7236ms
+2024-11-15T22:33:43.336+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T22:33:43.342+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 5.5563ms
+2024-11-15T22:33:49.310+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:33:49.557+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 246.6352ms
+2024-11-15T22:35:12.202+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:35:19.508+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:35:19.801+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 293.0811ms
+2024-11-15T22:58:34.886+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:58:44.992+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:58:45.316+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 324.0108ms
+2024-11-15T22:58:50.578+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:58:50.902+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 324.0091ms
+2024-11-15T22:59:32.997+0300	INFO	referal/main.go:24	start server
+2024-11-15T22:59:36.171+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T22:59:36.498+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 327.1362ms
+2024-11-15T22:59:59.656+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:00:03.428+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:00:03.786+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 358.044ms
+2024-11-15T23:00:49.259+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:00:50.303+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:00:50.632+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 329.1662ms
+2024-11-15T23:00:51.967+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:00:52.104+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 136.8571ms
+2024-11-15T23:01:35.314+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:01:36.276+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:01:36.600+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 323.8257ms
+2024-11-15T23:01:39.285+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:01:39.419+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 134.5011ms
+2024-11-15T23:01:43.833+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:01:45.961+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:01:46.286+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 325.196ms
+2024-11-15T23:02:19.340+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:02:21.230+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:02:21.553+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 322.6014ms
+2024-11-15T23:03:00.007+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:03:02.572+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:03:02.928+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 356.5898ms
+2024-11-15T23:03:14.101+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:03:15.567+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:03:15.891+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 324.3456ms
+2024-11-15T23:03:33.924+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:03:35.015+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:03:36.349+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 1.3331715s
+2024-11-15T23:04:22.778+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:04:23.659+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:04:23.985+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 326.462ms
+2024-11-15T23:05:16.469+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:05:18.158+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:05:18.482+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 324.0276ms
+2024-11-15T23:07:48.660+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:07:54.474+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T23:07:54.475+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 524.4µs
+2024-11-15T23:07:54.476+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T23:07:54.519+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 43.1369ms
+2024-11-15T23:08:00.597+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T23:08:00.876+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 278.8317ms
+2024-11-15T23:08:00.879+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T23:08:00.879+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 225.8µs
+2024-11-15T23:08:05.402+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:08:05.726+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 323.7703ms
+2024-11-15T23:08:11.443+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:08:11.763+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 320.1724ms
+2024-11-15T23:09:02.548+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:09:04.112+0300	INFO	server/middleware.go:21	Request GET /signout
+2024-11-15T23:09:04.112+0300	INFO	server/middleware.go:26	Completed GET /signout with 200 in 528.4µs
+2024-11-15T23:09:04.116+0300	INFO	server/middleware.go:21	Request GET /signin
+2024-11-15T23:09:04.162+0300	INFO	server/middleware.go:26	Completed GET /signin with 200 in 46.6255ms
+2024-11-15T23:09:05.811+0300	INFO	server/middleware.go:21	Request POST /signin
+2024-11-15T23:09:06.084+0300	INFO	server/middleware.go:26	Completed POST /signin with 200 in 273.9635ms
+2024-11-15T23:09:06.087+0300	INFO	server/middleware.go:21	Request GET /
+2024-11-15T23:09:06.088+0300	INFO	server/middleware.go:26	Completed GET / with 200 in 523µs
+2024-11-15T23:09:11.482+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:09:11.809+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 326.8413ms
+2024-11-15T23:09:17.419+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:09:17.742+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 322.6976ms
+2024-11-15T23:10:10.255+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:10:14.029+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:10:14.353+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 323.7485ms
+2024-11-15T23:10:40.085+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:10:41.341+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:10:41.668+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 327.2445ms
+2024-11-15T23:13:24.500+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:13:27.824+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:13:28.196+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 372.7353ms
+2024-11-15T23:14:31.145+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:14:33.059+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:14:33.432+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 372.963ms
+2024-11-15T23:14:46.792+0300	INFO	referal/main.go:24	start server
+2024-11-15T23:14:47.730+0300	INFO	server/middleware.go:21	Request GET /generate
+2024-11-15T23:14:48.036+0300	INFO	server/middleware.go:26	Completed GET /generate with 200 in 305.3631ms

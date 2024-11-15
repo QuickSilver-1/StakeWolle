@@ -1,6 +1,6 @@
 CREATE TABLE code (
     code_id      SERIAL PRIMARY KEY,
-    code_string  VARCHAR(30) UNIQUE,
+    code_string  VARCHAR(64) UNIQUE,
     expires TIMESTAMP
 );
 

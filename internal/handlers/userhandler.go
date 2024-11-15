@@ -13,8 +13,7 @@ import (
 )
 
 func MainPage(w http.ResponseWriter, r *http.Request) {
-	hello := []byte("Hello, World!")
-	w.Write(hello)
+	http.ServeFile(w, r, "../../web/html/main.html")
 }
 
 func SignInPage(w http.ResponseWriter, r *http.Request) {	
@@ -40,26 +39,21 @@ func SignIn(w http.ResponseWriter, r *http.Request) {
 	}
 
 	correctPass := <-out	
-	if len(correctPass) != 32 {
+
+	if correctPass == "" {
 		http.Error(w, pass, http.StatusBadRequest)
 		return
 	}
 
 	if correctPass == hashPass {
-		token, err := server.NewToken(email)
-
+		err = server.MakeToken(email, w)
+		
 		if err != nil {
 			http.Error(w, "Ошибка создания токена", http.StatusInternalServerError)
 			return
 		}
-		
-		http.SetCookie(w, &http.Cookie{
-			Name: "token",
-			Value: token,
-			Expires: time.Now().Add(5 * time.Minute),
-		})
-			
-		w.Write([]byte("Вы вошли"))
+
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 
 	} else {
 		http.Error(w, "Неправильный email или пароль", http.StatusUnauthorized)
@@ -84,7 +78,7 @@ func SignUp(w http.ResponseWriter, r *http.Request) {
 		defer close(e)
 
 		err := <-out
-		if err != "" {
+		if err != "success" {
 			http.Error(w, err, http.StatusBadRequest)
 			e<- true
 		} else {
@@ -95,9 +89,32 @@ func SignUp(w http.ResponseWriter, r *http.Request) {
 	go db.DB.Exec("create", out, email, hashPass)
 
 	if <-e {
+		w.Write([]byte("123123"))
 		return
 	}
-	w.Write([]byte("Аккаунт зарегистрирован"))
+
+	err = server.MakeToken(email, w)
+		
+	if err != nil {
+		http.Error(w, "Ошибка создания токена", http.StatusInternalServerError)
+		return
+	}
+
+	http.Redirect(w, r, "/", http.StatusSeeOther)
+}
+
+func SignOut(w http.ResponseWriter, r *http.Request) {
+	session, err := r.Cookie("JWT")
+
+	if err == http.ErrNoCookie {
+		http.Redirect(w, r, "/signin", http.StatusFound)
+		return
+	}
+
+	session.Expires = time.Now().AddDate(0, 0, -1)
+	http.SetCookie(w, session)
+
+	http.Redirect(w, r, "/signin", http.StatusFound)
 }
 
 func validPass(pass string) (string, error) {
@@ -122,9 +139,14 @@ func validPass(pass string) (string, error) {
 		return "", fmt.Errorf("пароль должен содержать хотя бы 1 заглвную букву и 1 цифру")
 	}
 
+	hash := genHash(pass)
+	return hash, nil
+}
+
+func genHash(str string) string {
 	hasher := sha256.New()
-	hasher.Write([]byte(pass))
+	hasher.Write([]byte(str))
 	hash := hasher.Sum(nil)
 
-	return hex.EncodeToString(hash), nil
+	return hex.EncodeToString(hash)
 }
