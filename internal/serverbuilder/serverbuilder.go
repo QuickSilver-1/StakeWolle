@@ -12,17 +12,17 @@ func MakeServer(port string, readWait, writeWait int) *http.Server {
 	mux := mux.NewRouter()
 
 	mux.Use(server.Middleware)
-	mux.HandleFunc("/signup", handlers.SignUpPage).Methods("GET")
 	mux.HandleFunc("/signup", handlers.SignUp).Methods("POST")
-
-	mux.HandleFunc("/signin", handlers.SignInPage).Methods("GET")
 	mux.HandleFunc("/signin", handlers.SignIn).Methods("POST")
 
 	afterAuth := mux.PathPrefix("/").Subrouter()
 	afterAuth.Use(server.CheckJWT)
-	afterAuth.HandleFunc("/", handlers.MainPage)
-	afterAuth.HandleFunc("/signout", handlers.SignOut).Methods("GET")
-	afterAuth.HandleFunc("/generate", handlers.GenRef)
+
+	afterAuth.HandleFunc("/generate", handlers.GenRef).Methods("GET")
+	afterAuth.HandleFunc("/delete", handlers.DelRef).Methods("GET")
+
+	afterAuth.HandleFunc("/code", handlers.GetCode).Methods("GET")
+	afterAuth.HandleFunc("/ref", handlers.GetRefs).Methods("GET")
 
 	return server.NewServer(port, mux, readWait, writeWait)
 }

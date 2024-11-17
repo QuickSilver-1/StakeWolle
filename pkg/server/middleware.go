@@ -3,7 +3,9 @@ package server
 import (
 	"fmt"
 	"net/http"
+	"referal/internal/config"
 	"referal/pkg/log"
+	"strings"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -29,37 +31,32 @@ func Middleware(next http.Handler) http.Handler {
 
 func CheckJWT(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		cookie, err := r.Cookie("JWT")
+		tokenS := r.Header.Get("Authorization")
 
-		if err != nil {
-			if err == http.ErrNoCookie {
-				http.Redirect(w, r, "/signin", http.StatusSeeOther)
-				return
-			}
-
-			http.Error(w, "Ошибка при получении куки", http.StatusBadRequest)
+		if tokenS == "" {
+			AnswerHandler(w, 401, "Требуется авторизация")
 			return
 		}
 
-		tokenS := cookie.Value
+		tokenS = strings.Split(tokenS, " ")[1]
 		claims := &Token{}
 
 		token, err := jwt.ParseWithClaims(tokenS, claims, func(token *jwt.Token) (interface{}, error) {
-			return secretKey, nil
+			return config.SecretKey, nil
 		})
 
 		if err != nil {
 			if err == jwt.ErrSignatureInvalid {
-				http.Redirect(w, r, "/signin", http.StatusSeeOther)
+				AnswerHandler(w, 400, "Ошибка сигнатуры токена")
 				return
 			}
 			
-			http.Error(w, "Ошибка при создании токена", http.StatusBadRequest)
+			AnswerHandler(w, 500, "Неверный токен")
 			return
 		}
 
 		if !token.Valid {
-			http.Redirect(w, r, "/signin", http.StatusSeeOther)
+			AnswerHandler(w, 401, "Необходима авторизация")
 			return
 		}
 

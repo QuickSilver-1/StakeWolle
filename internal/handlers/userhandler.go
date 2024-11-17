@@ -3,118 +3,102 @@ package handlers
 import (
 	"crypto/sha256"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"net/http"
+	dh "referal/internal/dbhandlers"
 	"referal/pkg/db"
 	"referal/pkg/server"
 	"strings"
-	"time"
 	"unicode"
 )
 
-func MainPage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "../../web/html/main.html")
-}
-
-func SignInPage(w http.ResponseWriter, r *http.Request) {	
-	http.ServeFile(w, r, "../../web/html/signin.html")
-}
-
-func SignUpPage(w http.ResponseWriter, r *http.Request) {	
-	http.ServeFile(w, r, "../../web/html/signup.html")
-}
-
 func SignIn(w http.ResponseWriter, r *http.Request) {
-	email := r.FormValue("email")
-	pass := r.FormValue("password")
-	
-	out := make(chan string)
-	go db.DB.Query("check", out, email)
-
-	hashPass, err := validPass(pass)
+	var user User
+	err := json.NewDecoder(r.Body).Decode(&user)
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		fmt.Println(err)
+		server.AnswerHandler(w, 400, "Неверный формат данных")
+		return
+	}
+
+	out := make(chan string)
+	go db.DB.Query("check", out, dh.DBData{
+		UserEmail: user.Email})
+
+	hashPass, err := validPass(user.Pass)
+
+	if err != nil {
+		server.AnswerHandler(w, 400, err.Error())
 		return
 	}
 
 	correctPass := <-out	
 
 	if correctPass == "" {
-		http.Error(w, pass, http.StatusBadRequest)
+		server.AnswerHandler(w, 400, "Пользователя с такой почтой не существует")
 		return
 	}
 
 	if correctPass == hashPass {
-		err = server.MakeToken(email, w)
+		token, err := server.MakeToken(user.Email)
 		
 		if err != nil {
-			http.Error(w, "Ошибка создания токена", http.StatusInternalServerError)
+			server.AnswerHandler(w, 500, "Ошибка создания токена")
 			return
 		}
 
-		http.Redirect(w, r, "/", http.StatusSeeOther)
+		server.AnswerHandler(w, 200, map[string]string{
+			"Info": "Вход",
+			"Code": "Bearer " + token,
+		})	
 
 	} else {
-		http.Error(w, "Неправильный email или пароль", http.StatusUnauthorized)
+		server.AnswerHandler(w, 401,"Неправильный пароль")
 	}
 }
 
 func SignUp(w http.ResponseWriter, r *http.Request) {
-	email := r.FormValue("email")
-	pass := r.FormValue("password")
-
-	hashPass, err := validPass(pass)
+	var user User
+	err := json.NewDecoder(r.Body).Decode(&user)
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		server.AnswerHandler(w, 400, "Неверный формат данных")
+		return
+	}
+
+	hashPass, err := validPass(user.Pass)
+
+	if err != nil {
+		server.AnswerHandler(w, 400, err.Error())
 		return
 	}
 
 	out := make(chan string)
-	e := make(chan bool)
+	e := make(chan string)
 
 	go func() {
-		defer close(e)
-
 		err := <-out
 		if err != "success" {
-			http.Error(w, err, http.StatusBadRequest)
-			e<- true
-		} else {
-			e<- false
+			e<- err
 		}
+
+		e<- ""
 	}()
 
-	go db.DB.Exec("create", out, email, hashPass)
+	go db.DB.Query("create", out, dh.DBData{
+		UserEmail: user.Email,
+		UserPass: hashPass,
+		RefString: user.Ref,
+	})
 
-	if <-e {
-		w.Write([]byte("123123"))
+	errS := <-e
+	if errS != "" {
+		server.AnswerHandler(w, 400, errS)
 		return
 	}
-
-	err = server.MakeToken(email, w)
-		
-	if err != nil {
-		http.Error(w, "Ошибка создания токена", http.StatusInternalServerError)
-		return
-	}
-
-	http.Redirect(w, r, "/", http.StatusSeeOther)
-}
-
-func SignOut(w http.ResponseWriter, r *http.Request) {
-	session, err := r.Cookie("JWT")
-
-	if err == http.ErrNoCookie {
-		http.Redirect(w, r, "/signin", http.StatusFound)
-		return
-	}
-
-	session.Expires = time.Now().AddDate(0, 0, -1)
-	http.SetCookie(w, session)
-
-	http.Redirect(w, r, "/signin", http.StatusFound)
+	server.AnswerHandler(w, 200, "Аккаунт зарегестрирован")
 }
 
 func validPass(pass string) (string, error) {

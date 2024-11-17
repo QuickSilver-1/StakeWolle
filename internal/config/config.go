@@ -4,7 +4,10 @@ import (
 	"flag"
 )
 
-var AppConfig = NewConfig()
+var (
+	AppConfig = NewConfig()
+	SecretKey = []byte("M8axEo25vLElQ8n85CvmFRmNrFWt0YQq")
+)
 
 type Config struct {
 	HttpPort	*int

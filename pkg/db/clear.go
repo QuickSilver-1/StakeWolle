@@ -22,8 +22,7 @@ func ClearDB(every time.Duration, db *sql.DB, table string, close chan interface
 }
 
 func deleteExpired(db *sql.DB, table string) {
-	query := fmt.Sprintf("DELETE FROM %s WHERE code_expires < NOW();", table)
-	_, err := db.Exec(query)
+	_, err := db.Exec(fmt.Sprintf(` DELETE FROM %s WHERE "expires" < NOW(); `, table))
 
 	if err != nil {
 		log.Printf("Ошибка удаления истекших кодов: %v", err)

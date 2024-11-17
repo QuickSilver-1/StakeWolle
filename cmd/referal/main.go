@@ -1,8 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	c "referal/internal/config"
+	"referal/internal/config"
 	dh "referal/internal/dbhandlers"
 	sb "referal/internal/serverbuilder"
 	"referal/pkg/db"
@@ -19,8 +20,9 @@ func main() {
 	}()
 
 	dh.CollectHandlers(&db.DB)
+	flag.Parse()
 
-	appServer := sb.MakeServer(":" + strconv.Itoa(*c.AppConfig.HttpPort), 10, 10)
+	appServer := sb.MakeServer(":" + strconv.Itoa(*config.AppConfig.HttpPort), 10, 10)
 	log.Logger.Info("start server")
 	err := appServer.ListenAndServe()
 	fmt.Print(err)

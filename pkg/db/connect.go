@@ -14,19 +14,14 @@ var(
 	DB = NewDB(*config.AppConfig.PgHost, *config.AppConfig.PgUser, *config.AppConfig.PgPass, *config.AppConfig.PgName, *config.AppConfig.PgPort)
 )
 
-
 type ConnectDatabase struct {
 	Quit 		chan interface{}
 	Connection	*sql.DB
-	Command 	map[string]func(*sql.DB, chan string, ...any)
+	Command 	map[string]func(*sql.DB, chan string, interface{})
 }
 
-func (c *ConnectDatabase) Exec(comm string, out chan string, args ...any) {
-	c.Command[comm](c.Connection, out, args...)
-}
-
-func (c *ConnectDatabase) Query(comm string, out chan string, args ...any) {
-	c.Command[comm](c.Connection, out, args...)
+func (c *ConnectDatabase) Query(comm string, out chan string, data interface{}) {
+	c.Command[comm](c.Connection, out, data)
 }
 
 func NewDB(host, user, password, dbname string, port int) ConnectDatabase {

@@ -2,53 +2,67 @@ package dbhandlers
 
 import (
 	"database/sql"
-	"fmt"
-	"referal/pkg/db"
 	"time"
 )
 
-func CollectHandlers(conn *db.ConnectDatabase) {
-	conn.Command = map[string]func(*sql.DB, chan string, ...any) {
-		"create": 	createUser,
-		"check":	checkUser,
-		"generate":	setCode,
-		"exist":	getCode,
-	}
+type DBData struct {
+	UserEmail	string
+	UserPass	string
+	UserId		string
+	DayExpires	time.Time
+	RefString	string
 }
 
-func createUser(database *sql.DB, out chan string, args ...any) {
+func createUser(database *sql.DB, out chan string, dataI interface{}) {
 	defer close(out)
-	tx, err := database.Begin()
+	data := dataI.(DBData)
 
-	defer func() {
+	check := make(chan string)
+	go checkCode(database, check, data)
+
+	if data.RefString == "" {
+		_, err := database.Exec(` INSERT INTO users (email, password) VALUES ($1, $2); `, data.UserEmail, data.UserPass)
+		
 		if err != nil {
-			tx.Rollback()
-		} else {
-			tx.Commit()
+			if err.Error() == `pq: duplicate key value violates unique constraint "users_email_key"` {
+				out<- "Такой пользователь уже существует"
+				return
+			}
+
+			out<- err.Error()
+			return
 		}
-	}()
 
-	var codeID int
-	err = tx.QueryRow(` INSERT INTO code (expires) VALUES ($1) RETURNING code_id `, time.Now().AddDate(0, 1, 0)).Scan(&codeID)
+	} else {
+		ref := <-check
+		if ref == "" {
+			out<- "Несуществующий реферальный код"
+			return
+		}
+		
+		_, err := database.Exec(` INSERT INTO users (email, password, ref_id) VALUES ($1, $2, $3); `, data.UserEmail, data.UserPass, ref)
+	
+		if err != nil {
+			if err.Error() == `pq: duplicate key value violates unique constraint "users_email_key"` {
+				out<- "Такой пользователь уже существует"
+				return
+			}
 
-	if err != nil {
-		out<- err.Error()
-		return
-	}
-	_, err = tx.Exec(` INSERT INTO users (email, password, ref_code) VALUES ($1, $2, $3) `, args[0], args[1], codeID)
-
-	if err != nil {
-		out<- err.Error()
-		return
+			out<- err.Error()
+			return
+		}
 	}
 
 	out<- "success"
 }
 
-func checkUser(database *sql.DB, out chan string, args ...any) {
-	var pass string
-	database.QueryRow(` SELECT "password" FROM users WHERE "email"=$1; `, args[0]).Scan(&pass)
+func checkUser(database *sql.DB, out chan string, dataI interface{}) {
+	defer close(out)
+	data := dataI.(DBData)
 
+	var pass string
+	database.QueryRow(` SELECT "password" FROM users WHERE "email"=$1; `, data.UserEmail).Scan(&pass)
+	
 	if pass == "\n" {
 		out<- ""
 		return
@@ -57,24 +71,17 @@ func checkUser(database *sql.DB, out chan string, args ...any) {
 	out<- pass
 }
 
-func setCode(database *sql.DB, out chan string, args ...any) {
-	_, err := database.Exec(` UPDATE code SET "code_string"=$1, "expires"=$2 WHERE "code_id"=(SELECT "ref_code" FROM users WHERE "email"=$3); `, args[0], args[1], args[2])
+func checkUserID(database *sql.DB, out chan string, dataI interface{}) {
+	defer close(out)
+	data := dataI.(DBData)
 
-	if err != nil {
-		out<- err.Error()
-	}
+	var pass string
+	database.QueryRow(` SELECT "password" FROM users WHERE "user_id"=$1; `, data.UserId).Scan(&pass)
 
-	out<- "success"
-}
-
-func getCode(database *sql.DB, out chan string, args ...any) {
-	var code string
-	database.QueryRow(` SELECT "code_string" FROM code WHERE "code_id"=(SELECT "ref_code" FROM users WHERE "email"=$1); `, args[0]).Scan(&code)
-	fmt.Println(code)
-	if code != "" {
-		out<- "exist"
+	if pass == "\n" {
+		out<- ""
 		return
 	}
 
-	out<- "not exist"
+	out<- pass
 }
