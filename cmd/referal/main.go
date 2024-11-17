@@ -3,27 +3,42 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strconv"
+	"time"
+
 	"referal/internal/config"
 	dh "referal/internal/dbhandlers"
 	sb "referal/internal/serverbuilder"
 	"referal/pkg/db"
 	"referal/pkg/log"
-	"strconv"
-	"time"
 )
 
 func main() {
-	close := make(chan interface{})
-	go db.ClearDB(time.Hour, db.DB.Connection, "code", close)
-	defer func() {
-		close<-1
-	}()
+    closer := make(chan interface{})
+    
+    // Запуск очистки базы данных каждые час
+    go db.ClearDB(time.Hour, db.DB.Connection, "code", closer)
+    
+    defer func() {
+        closer <- 1
+        close(closer)
+    }()
 
-	dh.CollectHandlers(&db.DB)
-	flag.Parse()
+    // Сборка обработчиков базы данных
+    dh.CollectHandlers(&db.DB)
 
-	appServer := sb.MakeServer(":" + strconv.Itoa(*config.AppConfig.HttpPort), 10, 10)
-	log.Logger.Info("start server")
-	err := appServer.ListenAndServe()
-	fmt.Print(err)
+    flag.Parse()
+
+    // Cоздания сервера
+    port := strconv.Itoa(*config.AppConfig.HttpPort)
+    appServer := sb.MakeServer(":" + port, 10, 10)
+    
+    log.Logger.Info(fmt.Sprintf("Сервер запущен на порту %s", port))
+    
+    // Запуск сервера
+    err := appServer.ListenAndServe()
+    
+    if err != nil {
+        log.Logger.Error(fmt.Sprintf("Ошибка при запуске сервера: %v", err))
+    }
 }

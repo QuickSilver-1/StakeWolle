@@ -2,244 +2,249 @@ package handlers
 
 import (
 	"context"
+	"fmt"
 	"net/http"
-	dh "referal/internal/dbhandlers"
-	"referal/pkg/db"
-	"referal/pkg/server"
 	"strconv"
 	"strings"
 	"sync"
 	"time"
+
+	dh "referal/internal/dbhandlers"
+	"referal/pkg/db"
+	"referal/pkg/log"
+	"referal/pkg/server"
 )
 
+// GenRef генерирует реферальный код для пользователя
 func GenRef(w http.ResponseWriter, r *http.Request) {
-	tokenS := r.Header.Get("Authorization")
+    tokenS := r.Header.Get("Authorization")
+    tokenS = strings.Split(tokenS, " ")[1]
 
-	tokenS = strings.Split(tokenS, " ")[1]
-	email, err := server.DecodeJWT(tokenS)
+    email, err := server.DecodeJWT(tokenS)  // Декодируем JWT для получения email
+    if err != nil {
+        server.AnswerHandler(w, 500, err.Error())
+        log.Logger.Error(fmt.Sprintf("Ошибка декодирования JWT: %v", err))
+        return
+    }
 
-	if err != nil {
-		server.AnswerHandler(w, 500, err.Error())
-		return
-	}
+    code := genHash(email + time.Now().String())  // Генерируем реферальный код
+    out := make(chan string)
+    go db.DB.Query("get", out, dh.DBData{
+        UserEmail: email,
+    })
 
-	code := genHash(email + time.Now().String())
-	out := make(chan string)
+    dayS := r.FormValue("day")
+    day, err := strconv.Atoi(dayS)  // Конвертируем строку в число
 
-	go db.DB.Query("get", out, dh.DBData{
-		UserEmail: email,
-	})
+    if err != nil {
+        server.AnswerHandler(w, 400, "Неверный формат данных")
+        log.Logger.Error(fmt.Sprintf("Неверный формат данных: %v", err))
+        return
+    }
 
-	dayS := r.FormValue("day")
-	day, err := strconv.Atoi(dayS)
+    exist := <-out
+    if exist != "" {
+        server.AnswerHandler(w, 400, "Перед генерацией нового кода необходимо удалить старый")
+        log.Logger.Info("Перед генерацией нового кода необходимо удалить старый")
+        return
+    }
 
-	if err != nil {
-		server.AnswerHandler(w, 400, "Неверный формат данных")
-		return
-	}
+    wg := &sync.WaitGroup{}
+    var rout chan string
 
-	exist := <-out
+    wg.Add(1)
+    go func() {
+        defer wg.Done()
+        res := <-out
+        if res != "success" {
+            server.AnswerHandler(w, 500, "Ошибка записи в базу данных")
+            log.Logger.Error(fmt.Sprintf("Ошибка записи в базу данных: %v", err))
+            return
+        }
 
-	if exist != "" {
-		server.AnswerHandler(w, 400, "Перед генерацией нового кода необходимо удалить старый")
-		return
-	}
+        ctx := context.Background()
+        rout = make(chan string)
+        go db.NewKey(ctx, email, code, rout)  // Сохраняем код в Redis
+    }()
 
-	wg := &sync.WaitGroup{}
+    out = make(chan string)
+    go db.DB.Query("generate", out, dh.DBData{
+        RefString: code,
+        DayExpires: time.Now().AddDate(0, 0, day),
+        UserEmail: email})
 
-	var rout chan string
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		res := <-out
+    wg.Wait()
+    res := <-rout
 
-		if res != "success" {
-			server.AnswerHandler(w, 500, "Ошибка записи в базу данных")
-			return
-		}
+    if res != "success" {
+        server.AnswerHandler(w, 500, res)
+        log.Logger.Error(fmt.Sprintf("Ошибка генерации ключа: %v", res))
+    }
 
-		ctx := context.Background()
-		rout = make(chan string)
-		go db.NewKey(ctx, email, code, rout)
-	}()
-
-	out = make(chan string)
-	go db.DB.Query("generate", out, dh.DBData{
-		RefString: code,
-		DayExpires: time.Now().AddDate(0, 0, day),
-		UserEmail: email})
-
-	wg.Wait()
-	res := <-rout
-
-	if res != "success" {
-		server.AnswerHandler(w, 500, res)
-	}
-
-	server.AnswerHandler(w, 200, code)
+    server.AnswerHandler(w, 200, code)
+    log.Logger.Info(fmt.Sprintf("Реферальный код успешно сгенерирован: %s", code))
 }
 
+// DelRef удаляет реферальный код для пользователя
 func DelRef(w http.ResponseWriter, r *http.Request) {
-	tokenS := r.Header.Get("Authorization")
+    tokenS := r.Header.Get("Authorization")
+    tokenS = strings.Split(tokenS, " ")[1]
 
-	tokenS = strings.Split(tokenS, " ")[1]
-	email, err := server.DecodeJWT(tokenS)
+    email, err := server.DecodeJWT(tokenS)  // Декодируем JWT для получения email
+    if err != nil {
+        server.AnswerHandler(w, 500, err.Error())
+        log.Logger.Error(fmt.Sprintf("Ошибка декодирования JWT: %v", err))
+        return
+    }
 
-	ctx := context.Background()
-	rout := make(chan string)
-	go db.DelKey(ctx, email, rout)
-	
-	if err != nil {
-		server.AnswerHandler(w, 500, err.Error())
-		return
-	}
+    out := make(chan string)
+    go db.DB.Query("delete", out, dh.DBData{
+        UserEmail: email,
+    })
 
-	out := make(chan string)
-	go db.DB.Query("delete", out, dh.DBData{
-		UserEmail: email,
-	})
+    ctx := context.Background()
+    rout := make(chan string)
+    go db.DelKey(ctx, email, rout)  // Удаляем код из Redis
 
-	res := <-rout
-	if res == "exist" {
-		rout = make(chan string)
-		go db.DelKey(ctx, email, rout)
-	}
+    ans := <-out
+    sliseAns := strings.Split(ans, " ")
+    code, _ := strconv.Atoi(sliseAns[0])
+    value := strings.Join(sliseAns[1:], " ")
 
-	ans := <-out
-	sliseAns := strings.Split(ans, " ")
-	code, _ := strconv.Atoi(sliseAns[0])
-	value := strings.Join(sliseAns[1:], " ")
+    res := <-rout
+    if res != "success" {
+        server.AnswerHandler(w, 500, res)
+        log.Logger.Error(fmt.Sprintf("Ошибка удаления ключа: %v", res))
+        return
+    }
 
-	res = <-rout
-	if res != "success" {
-		server.AnswerHandler(w, 500, res)
-		return
-	}
-	
-	server.AnswerHandler(w, code, value)
+    server.AnswerHandler(w, code, value)
+    log.Logger.Info(fmt.Sprintf("Реферальный код успешно удален для пользователя: %s", email))
 }
 
+// GetCode получает реферальный код пользователя
 func GetCode(w http.ResponseWriter, r *http.Request) {
-	email := r.URL.Query().Get("email")
+    email := r.URL.Query().Get("email")
 
-	ctx := context.Background()
-	rout := make(chan string)
-	go db.KeyExist(ctx, email, rout)
+    ctx := context.Background()
+    rout := make(chan string)
+    go db.GetKey(ctx, email, rout)  // Получаем код из Redis
 
-	out := make(chan string)
-	check := make(chan string)
+    out := make(chan string)
+    check := make(chan string)
 
-	exist := <-rout
-	if exist == "exist" {
-		rout = make(chan string)
-		db.KeyExist(ctx, email, rout)
-		
-		code := <-rout
-		server.AnswerHandler(w, 200, code)
-		return
-	}
+    code := <-rout
+    if code != "" {
+        server.AnswerHandler(w, 200, code)
+        log.Logger.Info(fmt.Sprintf("Реферальный код успешно получен: %s", code))
+        return
+    }
 
-	go db.DB.Query("get", out, dh.DBData{
-		UserEmail: email,
-	})
-	go db.DB.Query("check", check, dh.DBData{
-		UserEmail: email,
-	})
-	
-	var code string
-	var ref bool = true
-	select {
-	case code = <-out:
-		if code == "" {
-			ref = false
-			exist := <-check
+    go db.DB.Query("get", out, dh.DBData{
+        UserEmail: email,
+    })
+    go db.DB.Query("check", check, dh.DBData{
+        UserEmail: email,
+    })
 
-			if exist == "" {
-				server.AnswerHandler(w, 400, "Пользователя с такой почтой не существует")
-				return
-		}
-	}
-	
-	case exist := <-check:
-		if exist == "" {
-			server.AnswerHandler(w, 400, "Пользователя с такой почтой не существует")
-			return
-		}
+    var ref bool = true
+    select {
+    case code = <-out:
+        if code == "" {
+            ref = false
+            exist := <-check
+            if exist == "" {
+                server.AnswerHandler(w, 400, "Пользователя с такой почтой не существует")
+                log.Logger.Info(fmt.Sprintf("Пользователь с почтой %s не существует", email))
+                return
+            }
+        }
 
-		code = <-out
-		if code == "" {
-			ref = false
-		}
-	}
+    case exist := <-check:
+        if exist == "" {
+            server.AnswerHandler(w, 400, "Пользователя с такой почтой не существует")
+            log.Logger.Info(fmt.Sprintf("Пользователь с почтой %s не существует", email))
+            return
+        }
 
-	if !ref {
-		server.AnswerHandler(w, 400, "У этого пользователя нет реферального кода")
-		return
-	}
+        code = <-out
+        if code == "" {
+            ref = false
+        }
+    }
 
-	server.AnswerHandler(w, 200, code)
+    if !ref {
+        server.AnswerHandler(w, 400, "У этого пользователя нет реферального кода")
+        log.Logger.Info(fmt.Sprintf("У пользователя %s нет реферального кода", email))
+        return
+    }
+
+    server.AnswerHandler(w, 200, code)
+    log.Logger.Info(fmt.Sprintf("Реферальный код успешно получен: %s", code))
 }
 
+// GetRefs получает рефералов пользователя по ID
 func GetRefs(w http.ResponseWriter, r *http.Request) {
-	id := r.URL.Query().Get("id")
+    id := r.URL.Query().Get("id")
 
-	ctx := context.Background()
-	rout := make(chan string)
-	go db.KeyExist(ctx, id, rout)
+    ctx := context.Background()
+    rout := make(chan string)
+    go db.GetKey(ctx, id, rout)  // Получаем реферальные данные из Redis
 
-	check := make(chan string)
+    check := make(chan string)
+    code := <-rout
 
-	exist := <-rout
-	if exist == "exist" {
-		rout = make(chan string)
-		db.KeyExist(ctx, id, rout)
-		
-		code := <-rout
-		server.AnswerHandler(w, 200, code)
-		return
-	}
+    if code != "" {
+        server.AnswerHandler(w, 200, code)
+        log.Logger.Info(fmt.Sprintf("Реферальные данные успешно получены: %s", code))
+        return
+    }
 
-	go db.DB.Query("checkid", check, dh.DBData{
-		UserId: id,
-	})
+    go db.DB.Query("checkid", check, dh.DBData{
+        UserId: id,
+    })
 
-	out := make(chan string)
-	wg := &sync.WaitGroup{}
-	wg.Add(1)
+    out := make(chan string)
+    wg := &sync.WaitGroup{}
+    wg.Add(1)
 
-	pass := <-check
-	if pass == "" {
-		server.AnswerHandler(w, 400, "Пользователя с таким id не существует")
-		return
-	}
- 
-	go func() {
-		defer wg.Done()
-		users := []string{}
+    pass := <-check
+    if pass == "" {
+        server.AnswerHandler(w, 400, "Пользователя с таким id не существует")
+        log.Logger.Info(fmt.Sprintf("Пользователь с ID %s не существует", id))
+        return
+    }
 
-		for ref := range out {
-			users = append(users, ref)
-		}
+    go func() {
+        defer wg.Done()
+        users := []string{}
 
-		if len(users) == 0 {
-			server.AnswerHandler(w, 400, "У данного пльзователя нет рефералов")
-			return
-		}
+        for ref := range out {
+            users = append(users, ref)  // Собираем всех рефералов пользователя
+        }
 
-		server.AnswerHandler(w, 200, users)
+        if len(users) == 0 {
+            server.AnswerHandler(w, 200, "У данного пользователя нет рефералов")
+            log.Logger.Info(fmt.Sprintf("У пользователя с ID %s нет рефералов", id))
+            return
+        }
 
-		rout = make(chan string)
-		go db.NewKey(ctx, id, users, rout)
-	}()
+        server.AnswerHandler(w, 200, users)
+        log.Logger.Info(fmt.Sprintf("Рефералы пользователя с ID %s успешно получены", id))
 
-	go db.DB.Query("referals", out, dh.DBData{
-		UserId: id,
-	})
+        rout = make(chan string)
+        go db.NewKey(ctx, id, strings.Join(users, " "), rout)  // Сохраняем реферальные данные в Redis
+    }()
 
-	wg.Wait()
+    go db.DB.Query("referals", out, dh.DBData{
+        UserId: id,
+    })
 
-	res := <-rout
-	if res != "success" {
-		server.AnswerHandler(w, 500, res)
-	}
+    wg.Wait()
+
+    res := <-rout
+    if res != "success" {
+        log.Logger.Error(fmt.Sprintf("Ошибка при сохранении реферальных данных: %v", res))
+        return
+    }
 }

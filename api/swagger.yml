@@ -1,45 +1,13 @@
 openapi: 3.0.0
 info:
-  title: Referral System API
-  description: API для реферальной системы
+  title: Referal API
   version: 1.0.0
-
-components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-
-  schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-        email:
-          type: string
-        password:
-          type: string
-        referralCode:
-          type: string
-        referrerId:
-          type: integer
-
-    ReferralCode:
-      type: object
-      properties:
-        code:
-          type: string
-        expiresAt:
-          type: string
-          format: date-time
-
-security:
-  - bearerAuth: []
-
+  description: API для управления реферальными кодами и пользователями.
+servers:
+  - url: http://89.46.131.181:8080
+    description: Локальный сервер
 paths:
-  /register:
+  /signup:
     post:
       summary: Регистрация пользователя
       requestBody:
@@ -47,112 +15,268 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                password:
-                  type: string
-      responses:
-        '201':
-          description: Пользователь зарегистрирован
-        '400':
-          description: Ошибка запроса
-
-  /login:
-    post:
-      summary: Аутентификация пользователя
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                password:
-                  type: string
+              $ref: '#/components/schemas/User'
       responses:
         '200':
-          description: Успешная аутентификация
+          description: Аккаунт зарегестрирован
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  token:
+                  Status_code:
+                    type: integer
+                    example: 200
+                  Info:
                     type: string
-        '401':
-          description: Неверные учетные данные
-
-  /referral:
+                    example: "Аккаунт зарегестрирован"
+        '400':
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 400
+                  Info:
+                    type: string
+                    example: "Ошибка данных"
+  /signin:
     post:
-      summary: Создание реферального кода
-      security:
-        - bearerAuth: []
+      summary: Вход пользователя
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                expiresAt:
-                  type: string
-                  format: date-time
+              $ref: '#/components/schemas/Login'
       responses:
-        '201':
-          description: Реферальный код создан
+        '200':
+          description: Вход
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 200
+                  Info:
+                    type: string
+                    example: "Успешный вход"
         '400':
-          description: Ошибка запроса
-
-    delete:
-      summary: Удаление реферального кода
-      security:
-        - bearerAuth: []
-      responses:
-        '204':
-          description: Реферальный код удален
-        '400':
-          description: Ошибка запроса
-
-  /referral/{email}:
+          description: Ошибка
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 400
+                  Info:
+                    type: string
+                    example: "Ошибка данных"
+        '401':
+          description: Неправильный пароль
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 401
+                  Info:
+                    type: string
+                    example: "Неправильный пароль"
+  /generate:
     get:
-      summary: Получение реферального кода по email
+      summary: Генерация реферального кода
       parameters:
-        - in: path
-          name: email
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: day
+          in: query
+          required: true
+          schema:
+            type: integer
+            description: Количество дней до истечения срока действия кода
+      responses:
+        '200':
+          description: Реферальный код успешно сгенерирован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 200
+                  Info:
+                    type: string
+                    example: "c3070bf9bf32e7c95fe6c03c10f0d5a42ccba84fa0c4cb53a4e0e680ac7a315c"
+        '400':
+          description: Неверный формат данных или необходимо удалить старый код
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 400
+                  Info:
+                    type: string
+                    example: "Ошибка данных"
+                  
+        '500':
+          description: Ошибка записи в базу данных
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 500
+                  Info:
+                    type: string
+                    example: "Ошибка сервера"
+  /delete:
+    get:
+      summary: Удаление реферального кода
+      parameters:
+        - name: Authorization
+          in: header
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: Успешное получение реферального кода
+          description: Реферальный код успешно удален
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ReferralCode'
-        '404':
-          description: Реферальный код не найден
-
-  /referrals/{referrerId}:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 200
+                  Info:
+                    type: string
+                    example: "Код удален"
+        '500':
+          description: Ошибка удаления ключа или декодирования JWT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 500
+                  Info:
+                    type: string
+                    example: "Ошибка сервера"
+  /code:
     get:
-      summary: Получение информации о рефералах по id реферера
+      summary: Получение реферального кода по email
       parameters:
-        - in: path
-          name: referrerId
+        - name: email
+          in: query
           required: true
           schema:
-            type: integer
+            type: string
       responses:
         '200':
-          description: Список рефералов
+          description: Код
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
-        '404':
-          description: Рефералы не найдены
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 200
+                  Info:
+                    type: string
+                    example: "c3070bf9bf32e7c95fe6c03c10f0d5a42ccba84fa0c4cb53a4e0e680ac7a315c"
+        '400':
+          description: Пользователь не существует или у пользователя нет реферального кода
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 400
+                  Info:
+                    type: string
+                    example: "Ошибка данных"
+  /ref:
+    get:
+      summary: Получение рефералов по ID пользователя
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Рефералы успешно получены
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 200
+                  Info:
+                    type: string
+                    example: "12 14 15"
+        '400':
+          description: Пользователь не существует или у пользователя нет рефералов
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Status_code:
+                    type: integer
+                    example: 400
+                  Info:
+                    type: string
+                    example: "Ошибка данных"
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        email:
+          type: string
+          example: "user@example.com"
+        password:
+          type: string
+          example: "Password123!"
+        ref:
+          type: string
+          example: "c3070bf9bf32e7c95fe6c03c10f0d5a42ccba84fa0c4cb53a4e0e680ac7a315c"
+
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          example: "user@example.com"
+        password:
+          type: string
+          example: "Password123!"

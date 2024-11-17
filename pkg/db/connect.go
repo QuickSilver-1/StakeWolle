@@ -6,46 +6,55 @@ import (
 	"time"
 
 	"referal/internal/config"
+	"referal/pkg/log"
 
 	_ "github.com/lib/pq"
 )
 
 var(
-	DB = NewDB(*config.AppConfig.PgHost, *config.AppConfig.PgUser, *config.AppConfig.PgPass, *config.AppConfig.PgName, *config.AppConfig.PgPort)
+    DB = NewDB(*config.AppConfig.PgHost, *config.AppConfig.PgUser, *config.AppConfig.PgPass, *config.AppConfig.PgName, *config.AppConfig.PgPort)
 )
 
 type ConnectDatabase struct {
-	Quit 		chan interface{}
-	Connection	*sql.DB
-	Command 	map[string]func(*sql.DB, chan string, interface{})
+    Quit        chan interface{}
+    Connection  *sql.DB
+    Command     map[string]func(*sql.DB, chan string, interface{})
 }
 
+// Query выполняет команду над базой данных
 func (c *ConnectDatabase) Query(comm string, out chan string, data interface{}) {
-	c.Command[comm](c.Connection, out, data)
+    log.Logger.Info(fmt.Sprintf("Выполнение команды: %s", comm))
+    c.Command[comm](c.Connection, out, data)
 }
 
+// NewDB создаёт новое подключение к базе данных
 func NewDB(host, user, password, dbname string, port int) ConnectDatabase {
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-							host, port, user, password, dbname)
-	conn, err := sql.Open("postgres", psqlInfo)
+    psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+                            host, port, user, password, dbname)
+    conn, err := sql.Open("postgres", psqlInfo)
 
-	if err != nil {
-		panic("Проблема с подключением к базе данных")
-	}
+    if err != nil {
+        log.Logger.Fatal(fmt.Sprintf("Проблема с подключением к базе данных: %v", err))
+        panic("Проблема с подключением к базе данных")
+    }
 
-	conn.SetMaxOpenConns(10)
-	conn.SetMaxIdleConns(5)
-	conn.SetConnMaxLifetime(time.Second * 3)
+    conn.SetMaxOpenConns(10)
+    conn.SetMaxIdleConns(5)
+    conn.SetConnMaxLifetime(time.Second * 3)
 
-	db := ConnectDatabase{
-		Quit: make(chan interface{}),
-		Connection: conn,
-	}
+    db := ConnectDatabase{
+        Quit: make(chan interface{}),
+        Connection: conn,
+        Command: make(map[string]func(*sql.DB, chan string, interface{})),
+    }
 
-	go func() {
-		<-db.Quit
-		db.Connection.Close()
-	}()
+    log.Logger.Info("Успешное подключение к базе данных")
 
-	return db
+    go func() {
+        <-db.Quit
+        db.Connection.Close()
+        log.Logger.Info("Подключение к базе данных закрыто")
+    }()
+
+    return db
 }
