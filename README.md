@@ -1,7 +1,7 @@
 # StakeWolle
  ![Build Status](https://github.com/QuickSilver-1/VK-Golang-Internship/actions/workflows/go.yml/badge.svg)
 
- <h3>Реферальная система в рамках технического задания для отбора на стажировку в компанию Stakewolle</h3>
+ <h3>Реферальная система в рамках технического задания для отбора на стажировку</h3>
 
  <h2>Структура проекта</h2>
 
