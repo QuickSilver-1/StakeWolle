@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"music/internal/config"
-	"music/pkg/log"
+	"referal/internal/config"
+	"referal/pkg/log"
 
 	_ "github.com/lib/pq"
 )
