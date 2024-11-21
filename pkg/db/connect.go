@@ -2,17 +2,18 @@ package db
 
 import (
 	"database/sql"
+	"flag"
 	"fmt"
 	"time"
 
-	"referal/internal/config"
-	"referal/pkg/log"
+	"music/internal/config"
+	"music/pkg/log"
 
 	_ "github.com/lib/pq"
 )
 
 var(
-    DB = NewDB(*config.AppConfig.PgHost, *config.AppConfig.PgUser, *config.AppConfig.PgPass, *config.AppConfig.PgName, *config.AppConfig.PgPort)
+    DB = NewDB()
 )
 
 type ConnectDatabase struct {
@@ -28,9 +29,11 @@ func (c *ConnectDatabase) Query(comm string, out chan string, data interface{}) 
 }
 
 // NewDB создаёт новое подключение к базе данных
-func NewDB(host, user, password, dbname string, port int) ConnectDatabase {
+func NewDB() ConnectDatabase {
+    flag.Parse()
+
     psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-                            host, port, user, password, dbname)
+                            *config.AppConfig.PgHost, *config.AppConfig.PgPort, *config.AppConfig.PgUser, *config.AppConfig.PgPass, *config.AppConfig.PgName)
     conn, err := sql.Open("postgres", psqlInfo)
 
     if err != nil {
