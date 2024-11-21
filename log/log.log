@@ -292,3 +292,9 @@
 2024-11-17T13:42:39.503+0300	INFO	server/httpserver.go:35	Ответ успешно обработан: {200 ce0cec7dd4f0a0abdfec4308a466ecb2ff33ebc38a97aec126f406b073faffb3}
 2024-11-17T13:42:39.504+0300	INFO	handlers/refhandler.go:139	Реферальный код успешно получен: ce0cec7dd4f0a0abdfec4308a466ecb2ff33ebc38a97aec126f406b073faffb3
 2024-11-17T13:42:39.504+0300	INFO	server/middleware.go:38	Completed GET /code with 200 in 159.6746ms
+2024-11-21T15:11:09.265+0300	INFO	db/connect.go:51	Успешное подключение к базе данных
+2024-11-21T15:11:09.292+0300	INFO	db/redis.go:25	Успешное подключение к Redis
+2024-11-21T15:11:09.292+0300	INFO	dbhandlers/collectCRUD.go:12	Сборка CRUD
+2024-11-21T15:11:09.293+0300	INFO	server/httpserver.go:40	Создание нового сервера на порту :8080
+2024-11-21T15:11:09.293+0300	INFO	server/httpserver.go:49	Новый сервер успешно создан
+2024-11-21T15:11:09.293+0300	INFO	referal/main.go:36	Сервер запущен на порту 8080
